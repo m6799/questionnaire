@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>サイト</title>
+</head>
+
+<body>
+    <h1>My Site</h1>
+    <p>Welcome to My Site</p>
+    <%= user %> さんようこそ。
+        <p>
+            <a href="/logout">ログアウト</a>
+            <a href="/quest/input">2018上期アンケート</a>
+        </p>
+</body>
+
 </html>

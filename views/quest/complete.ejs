@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>サイト</title>
+</head>
+
+<body>
+    <h1>My Site</h1>
+    <p>W2018上期アンケート</p>
+    <%= user %> さんようこそ。
+        <p>
+            <a href="/logout">ログアウト</a>
+        </p>
+
+
+    <h2>アンケート回答完了！</h2>
+
+    <p>
+        <a href="/quest/input">アンケート回答修正</a>
+    </p>
+
+  
+
+    <p>Q1：一つ目の問い</p>
+    <p>
+        <%= questdata.answer1 %> 
+    </p>
+    <p>Q２：二つ目の問い</p>
+    <p>
+        <%= questdata.answer2 %> 
+    </p>
+    
+    <p>Q２：三つ目の問い</p>
+    <p>
+        <%= questdata.answer3 %> 
+    </p>
+    
+
+    <p>
+        <a href="/logout">ログアウト</a>
+    </p>
+
+        
+</body>
+
+</html>

@@ -7,7 +7,23 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+//ログインとログアウトを追加
+var loginRouter = require('./routes/login');
+var addRouter = require('./routes/add');
+var logoutRouter = require('./routes/logout');
+var questRouter = require('./routes/quest');
+
+
 var app = express();
+
+//connect-mongoの読み込み
+// var MongoStore = require('connect-mongo');
+// var session = require('express-session');
+
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -17,10 +33,73 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  store: new MongoStore({ url: 'mongodb://localhost/sample-login' }),
+  saveUninitialized: false,
+  cookie:{
+  httpOnly: true,
+  secure: false,
+  maxage: 1000 * 60 * 30
+  }
+})); 
+
+
+//  app.use(session({
+//    secret: 'secret',
+//   // store: new MongoStore({
+//   //     db: 'sample-login', // データベース名
+//   //     host: 'localhost', // データベースのアドレス
+//   // }),
+//   cookie: {
+//       httpOnly: false
+//   }
+// }));
+
+
+// app.use(session({
+//   secret: 'secret',
+//   store: new MongoStore({
+//       db: 'sample-login', // データベース名
+//       host: 'localhost', // データベースのアドレス
+//       clear_interval: 60 * 60 // 保存期間(sec)
+//   }),
+//   cookie: {
+//       httpOnly: true, // cookieへのアクセスをHTTPのみに制限
+//       maxAge: 60 * 60 * 1000 // クッキーの有効期限(msec)
+//   }
+// }));
+
+
+
+// app.use(session({
+//   secret: 'secret',
+//   store: new MongoStore({
+//       db: 'sample-login', // データベース名
+//       host: 'localhost', // データベースのアドレス
+//       clear_interval: 60 * 60 // 保存期間(sec)
+//   }),
+//   cookie: {
+//       httpOnly: true, // cookieへのアクセスをHTTPのみに制限
+//       maxAge: 60 * 60 * 1000 // クッキーの有効期限(msec)
+//   }
+// }));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/login', loginRouter);
+app.use('/add', addRouter);
+app.use('/logout', logoutRouter);
+app.use('/quest', questRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

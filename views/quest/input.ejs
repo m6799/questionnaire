@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>サイト</title>
+</head>
+
+<body>
+    <h1>My Site</h1>
+    <p>W2018上期アンケート</p>
+    <%= user %> さんようこそ。
+        <p>
+            <a href="/logout">ログアウト</a>
+        </p>
+
+
+    <h2>アンケートです。</h2>
+    <form action="/quest/complete" method="POST">
+        <p>Q1：一つ目の問い</p>
+        <p>
+            <textarea name="answer1" rows="8" cols="150" placeholder="未回答"></textarea>
+        </p>
+        <p>Q２：二つ目の問い</p>
+        <input type="text" name="answer2" placeholder="回答2はこちら" />
+
+        <p>Q２：三つ目の問い</p>
+
+        <select name="answer3">
+            <option value="めちゃいい！！">めちゃいい！！</option>
+            <option value="まあまあいい！">まあまあいい！</option>
+            <option value="普通">普通</option>
+            <option value="最悪・・">最悪・・</option>
+        </select>
+
+        <p><input type="submit" value="回答!"></p>
+        
+
+    </form>
+
+        
+</body>
+
+</html>
