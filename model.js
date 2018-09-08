@@ -8,7 +8,7 @@ var db  = mongoose.createConnection(url, function(err, res){
     }
 });
 
-// Modelの定義
+// Modelの定義  (ログインユーザスキーマ)
 var UserSchema = new mongoose.Schema({
     email    : String,
     password  : String

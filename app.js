@@ -51,47 +51,6 @@ app.use(session({
 })); 
 
 
-//  app.use(session({
-//    secret: 'secret',
-//   // store: new MongoStore({
-//   //     db: 'sample-login', // データベース名
-//   //     host: 'localhost', // データベースのアドレス
-//   // }),
-//   cookie: {
-//       httpOnly: false
-//   }
-// }));
-
-
-// app.use(session({
-//   secret: 'secret',
-//   store: new MongoStore({
-//       db: 'sample-login', // データベース名
-//       host: 'localhost', // データベースのアドレス
-//       clear_interval: 60 * 60 // 保存期間(sec)
-//   }),
-//   cookie: {
-//       httpOnly: true, // cookieへのアクセスをHTTPのみに制限
-//       maxAge: 60 * 60 * 1000 // クッキーの有効期限(msec)
-//   }
-// }));
-
-
-
-// app.use(session({
-//   secret: 'secret',
-//   store: new MongoStore({
-//       db: 'sample-login', // データベース名
-//       host: 'localhost', // データベースのアドレス
-//       clear_interval: 60 * 60 // 保存期間(sec)
-//   }),
-//   cookie: {
-//       httpOnly: true, // cookieへのアクセスをHTTPのみに制限
-//       maxAge: 60 * 60 * 1000 // クッキーの有効期限(msec)
-//   }
-// }));
-
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
