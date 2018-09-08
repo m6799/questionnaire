@@ -1,11 +1,14 @@
 var express = require('express');
 var router = express.Router();
+var model = require('../model');
+var Answer = model.Answer;
+
 
 var loginCheck = function(req, res, next) {
     if(req.session.user){
         next();
     }else{
-        res.redirect('login');
+        res.redirect('/login');
     }
 };
 
@@ -24,13 +27,65 @@ var extract = function (req) {
 
 //GET  quest/input
 router.get('/input', loginCheck, function(req, res) {
-    res.render('./quest/input', { user: req.session.user});
+    var query = {
+        user:req.session.user
+    };
+    Answer.findOne(query, function(err, data) {
+        if (err) {
+            console.log(err);
+            res.render('./quest/input', { user: req.session.user,data});
+        }
+        if (data === "") {
+            console.log("データとれなかったよ。。");
+        } else {
+            console.log("データとれたよ。。");
+            // console.log(data);
+            // res.render('./quest/input', { user: req.session.user,data});
+            res.render('./quest/input', { user: req.session.user});
+        }
+    });
+
+
 });
 
 
 //POST  quest/complete
 router.post('/complete', loginCheck, function(req, res) {
-    var questdata = extract(req);
+
+    var questanswer = extract(req);
+    var questdata = {
+        user:req.session.user
+    };
+    Object.assign(questdata, questanswer);
+    
+
+    // var newAnswer = new Answer(questdata);
+    // newAnswer.save(function(err) {
+    //     if (err) {
+    //         console.log(err);
+    //         res.redirect('back');
+    //     } else {
+            
+    //     }
+    // });
+
+    // newAnswer.update(
+    //     {user: questdata.user}, 
+    //     { $set: {questdata} }, 
+    //     {upsert: true}, 
+    //     function(err) {}
+    // );
+
+    var query = {
+        user:req.session.user
+    }
+
+    Answer.findOneAndUpdate(query, questdata, {upsert:true}, function(err, doc){
+        if (err) return res.send(500, { error: err });
+    });
+
+
+
     res.render('./quest/complete', { user: req.session.user,questdata});
 });
 

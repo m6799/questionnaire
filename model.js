@@ -15,3 +15,15 @@ var UserSchema = new mongoose.Schema({
 },{collection: 'info'});
 
 exports.User = db.model('User', UserSchema);
+
+
+
+// Modelの定義  (回答スキーマ)
+var AnswerSchema = new mongoose.Schema({
+    user:String,
+    answer1: String,
+    answer2: String,
+    answer3: String
+},{collection: 'answer'});
+
+exports.Answer = db.model('Answer', AnswerSchema);

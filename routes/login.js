@@ -5,9 +5,11 @@ var User = model.User;
 
 router.get('/', function(req, res) {
     res.render('login');
+    console.log("loginが表示されたよ");
 });
 
 router.post('/', function(req, res) {
+    console.log("login画面でＰＯＳＴされたよ");
     var email = req.body.email;
     var password = req.body.password;
     var query = {
@@ -21,6 +23,7 @@ router.post('/', function(req, res) {
         if (data === "") {
             res.render('login');
         } else {
+            console.log("userはあるってよ。/にリダイレクトするよ。");
             req.session.user = email;
             res.redirect('/');
         }

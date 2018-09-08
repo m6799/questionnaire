@@ -3,8 +3,10 @@ var router = express.Router();
 
 var loginCheck = function(req, res, next) {
     if(req.session.user){
+        console.log("sessionにuserがあったよ。");
         next();
     }else{
+        console.log("sessionにuserがなかったよ。");
         res.redirect('login');
     }
 };
