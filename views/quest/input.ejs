@@ -1,5 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="ja">
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<%
+  if (typeof data === 'undefined') {
+    var data = {
+      answer1:'',
+      answer3:''
+    };
+  }
+%>
+
+
 
 <head>
     <meta charset="UTF-8">
@@ -16,10 +30,10 @@
 
 
     <h2>アンケートです。</h2>
-    <form action="/quest/complete" method="POST">
+    <form action="/quest/complete" method="POST">      
         <p>Q1：一つ目の問い</p>
         <p>
-            <textarea name="answer1" rows="8" cols="150" placeholder="未回答"></textarea>
+            <textarea name="answer1" rows="8" cols="150" placeholder="未回答"><%= data.answer1 %> </textarea>
         </p>
         <p>Q２：二つ目の問い</p>
         <input type="text" name="answer2" placeholder="回答2はこちら" />

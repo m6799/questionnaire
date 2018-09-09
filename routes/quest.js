@@ -13,7 +13,7 @@ var loginCheck = function(req, res, next) {
 };
 
 /**
- * リクエストボディーから回答結果を抽出
+ * リクエストボディーから回答結果を抽出する
  */
 var extract = function (req) {
     return {
@@ -21,7 +21,7 @@ var extract = function (req) {
         answer2: req.body.answer2,
         answer3: req.body.answer3
     };
-  };
+};
 
 
 
@@ -30,19 +30,23 @@ router.get('/input', loginCheck, function(req, res) {
     var query = {
         user:req.session.user
     };
+
     Answer.findOne(query, function(err, data) {
         if (err) {
             console.log(err);
             res.render('./quest/input', { user: req.session.user,data});
         }
-        if (data === "") {
+        if (data == null) {
             console.log("データとれなかったよ。。");
+            res.render('./quest/input', { user: req.session.user});
         } else {
             console.log("データとれたよ。。");
             // console.log(data);
-            // res.render('./quest/input', { user: req.session.user,data});
-            res.render('./quest/input', { user: req.session.user});
+            res.render('./quest/input', { user: req.session.user,data});
         }
+
+    
+
     });
 
 
@@ -59,6 +63,7 @@ router.post('/complete', loginCheck, function(req, res) {
     Object.assign(questdata, questanswer);
     
 
+    //全て新規レコードで突っ込む
     // var newAnswer = new Answer(questdata);
     // newAnswer.save(function(err) {
     //     if (err) {
@@ -69,17 +74,11 @@ router.post('/complete', loginCheck, function(req, res) {
     //     }
     // });
 
-    // newAnswer.update(
-    //     {user: questdata.user}, 
-    //     { $set: {questdata} }, 
-    //     {upsert: true}, 
-    //     function(err) {}
-    // );
 
+    //回答がはじめてなら新規登録、既にあればアップデート
     var query = {
         user:req.session.user
     }
-
     Answer.findOneAndUpdate(query, questdata, {upsert:true}, function(err, doc){
         if (err) return res.send(500, { error: err });
     });
