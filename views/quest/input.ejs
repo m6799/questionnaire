@@ -30,37 +30,543 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>サイト</title>
+    <title>企画開発チーム2018年上期アンケート</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
-    <h1>My Site</h1>
-    <div>W2018上期アンケート</div>
-    <%= user %> さんようこそ。
-        <div>
-            <a href="/logout">ログアウト</a>
+    <h1>企画開発チーム2018年上期アンケート</h1>
+    <div>
+        <%= user %> さんようこそ。
+        <a href="/logout">ログアウト</a>
+    </div>
+
+    <div class="comment"">
+        2018年上期お疲れ様でした。今後のチーム運営改善のため、アンケートにご協力下さい！
+    </div>
+
+    <form action="/quest/complete" method="POST">
+         <div class="large">
+            <h2>2018年上期施策(ID:1070869865)について</h2>     
+            <div class="middle">
+                Q1：企画開発スキルロードマップ
+                <div class ="small">
+                    <select name="shisakuanswer1-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer1-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q2：スキル１ＵＰ
+                <div class ="small">
+                    <select name="shisakuanswer2-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer2-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+
+            <div class="middle">
+                Q3：ブートキャンプ
+                <div class ="small">
+                    <select name="shisakuanswer3-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer3-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q4：座談会
+                <div class ="small">
+                    <select name="shisakuanswer4-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer4-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q5：チームアイデンティティ作成
+                <div class ="small">
+                    <select name="shisakuanswer5-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer5-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+
+            <div class="middle">
+                Q6：JIRAをベースにしたコミュニケーション改善活動
+                <div class ="small">
+                    <select name="shisakuanswer6-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer6-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+
+            <div class="middle">
+                Q7：適正な業務量の見極め、開発メンバの増員計画を考える活動
+                <div class ="small">
+                    <select name="shisakuanswer7-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer7-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+
+            <div class="middle">
+                Q8：戦略マップのチーム内での共有
+                <div class ="small">
+                    <select name="shisakuanswer8-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer8-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+            
+            <div class="middle">
+                Q9：開発との上流工程役割分担の見直し
+                <div class ="small">
+                    <select name="shisakuanswer9-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer9-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+            
+            
+            <div class="middle">
+                Q10：NRI内他システムとの連携窓口の設置（VD）
+                <div class ="small">
+                    <select name="shisakuanswer10-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer10-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            
+            <div class="middle">
+                Q11：NRI内他システムとの連携窓口の設置（POSTUB）
+                <div class ="small">
+                    <select name="shisakuanswer11-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer11-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q12：NRI内他システムとの連携窓口の設置（e-bango）
+                <div class ="small">
+                    <select name="shisakuanswer12-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer12-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q13：NRI内他システムとの連携窓口の設置（ラップ）
+                <div class ="small">
+                    <select name="shisakuanswer13-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer13-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q14：他システム窓口からの情報共有（企画開発定例での週次共有）
+                <div class ="small">
+                    <select name="shisakuanswer14-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer14-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q15：日常的に種をまき、感度良く（チームメンバー発表）
+                <div class ="small">
+                    <select name="shisakuanswer15-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer15-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q16：日常的に種をまき、感度良く（企画Ｇ（加藤さん）発表）
+                <div class ="small">
+                    <select name="shisakuanswer16-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer16-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q17：日常的に種をまき、感度良く（アイディアソン）
+                <div class ="small">
+                    <select name="shisakuanswer17-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer17-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q18：個別進捗（繁忙の数値化）
+                <div class ="small">
+                    <select name="shisakuanswer18-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer18-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+            
+            <div class="middle">
+                Q19：個別進捗（現業以外の時間の数値化）
+                <div class ="small">
+                    <select name="shisakuanswer19-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer19-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+            <div class="middle">
+                Q20：個別進捗（ニコニコカレンダー）
+                <div class ="small">
+                    <select name="shisakuanswer20-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer20-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+            <div class="middle">
+                Q21：個別進捗（お悩み相談（メンバがこまっていることを抽出してチケット化））
+                <div class ="small">
+                    <select name="shisakuanswer21-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer21-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q22：個別進捗（チームに対するご意見の収集（意見はチーム内課題としてチケット化））
+                <div class ="small">
+                    <select name="shisakuanswer22-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer22-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q23：企画開発リーダー会（チーム内課題確認のための枠を追加し、解消速度をあげる）
+                <div class ="small">
+                    <select name="shisakuanswer23-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer23-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q24：役割の見直し（「社員さん」「特別ＳＥ」という区別の破壊、特別ＳＥの役割の明文化）
+                <div class ="small">
+                    <select name="shisakuanswer24-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer24-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q25：ＧＭよもやま相談会
+                <div class ="small">
+                    <select name="shisakuanswer25-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer25-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q26：法制度委員会の旗振りを、「増員して」企画開発内にもってくる
+                <div class ="small">
+                    <select name="shisakuanswer26-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer26-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q27：施策についてコメントがあれば、お願いします！（もっとこうしたほうがいい、など）
+                <div class ="small">
+                    <textarea name="shisakuanswer27" rows="16" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+
         </div>
 
-    <h2>アンケートです。</h2>
-    <form action="/quest/complete" method="POST">      
-        <div>Q1：一つ目の問い</div>
-        <div>
-            <textarea name="answer1" rows="8" cols="150" placeholder="未回答"><%= data.answer1 %> </textarea>
-        </div>
-        <div>Q２：二つ目の問い</div>
-        <div>
-            <textarea name="answer1" rows="8" cols="150" placeholder="未回答"><%= data.answer2 %> </textarea>
+
+        <div class="large">
+            <h2>チームについて</h2>     
+            <div class="middle">
+                Q1：XXX
+                <div class ="small">
+                    <select name="teamanswer1-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer1-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
         </div>
 
-        <div>Q２：三つ目の問い</div>
 
-        <select name="answer3">
-            <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
-            <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
-            <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
-            <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
-            <option value=4 <%= optionselect(4,data.answer3) %>>5:非常に良い</option>
-        </select>
+        <div class="large">
+            <h2>チームビジョン（ID:1067098112）達成度について</h2>     
+            <div class="middle">
+                Q1：XXX
+                <div class ="small">
+                    <select name="visionanswer1-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="visionanswer1-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="large">
+            <h2>ご自身のモチベーションについて（ ToMo(Total Motivation)指数 ）</h2>     
+            <div class="middle">
+                Q1：XXX
+                <div class ="small">
+                    <select name="visionanswer1-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="visionanswer1-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="large">
+            <h2>MVP</h2>     
+            <div class="middle">
+                2018年下期、企画開発のMVPだと思う人をおしえてください。
+                （できれば複数人挙げてください！）
+                <div class ="small">
+                    <select name="mvpanswer1-1">
+                        <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.answer3) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="mvpanswer1-2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="large">
+            <h2>その他</h2>     
+            <div class="middle">
+                その他、何かコメントがあれば自由にお願いします！
+                <div class ="small">
+                    <textarea name="etcanswer1" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.answer1 %> </textarea>
+                </div>
+            </div>
+        </div>
+
 
         <div><input type="submit" value="回答!"></div>
         
