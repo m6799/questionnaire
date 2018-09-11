@@ -2,8 +2,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
 <%
   if (typeof data === 'undefined') {
     var data = {
@@ -11,6 +9,21 @@
       answer3:''
     };
   }
+
+  function rtntst(){
+      var str = "selected";
+      return str;
+  }
+
+
+  function optionselect(a,b){
+    var str = "";
+    if(a == b){
+        var str = "selected";
+    }
+    return str;
+}
+
 %>
 
 
@@ -22,32 +35,34 @@
 
 <body>
     <h1>My Site</h1>
-    <p>W2018上期アンケート</p>
+    <div>W2018上期アンケート</div>
     <%= user %> さんようこそ。
-        <p>
+        <div>
             <a href="/logout">ログアウト</a>
-        </p>
-
+        </div>
 
     <h2>アンケートです。</h2>
     <form action="/quest/complete" method="POST">      
-        <p>Q1：一つ目の問い</p>
-        <p>
+        <div>Q1：一つ目の問い</div>
+        <div>
             <textarea name="answer1" rows="8" cols="150" placeholder="未回答"><%= data.answer1 %> </textarea>
-        </p>
-        <p>Q２：二つ目の問い</p>
-        <input type="text" name="answer2" placeholder="回答2はこちら" />
+        </div>
+        <div>Q２：二つ目の問い</div>
+        <div>
+            <textarea name="answer1" rows="8" cols="150" placeholder="未回答"><%= data.answer2 %> </textarea>
+        </div>
 
-        <p>Q２：三つ目の問い</p>
+        <div>Q２：三つ目の問い</div>
 
         <select name="answer3">
-            <option value="めちゃいい！！">めちゃいい！！</option>
-            <option value="まあまあいい！">まあまあいい！</option>
-            <option value="普通">普通</option>
-            <option value="最悪・・">最悪・・</option>
+            <option value=1 <%= optionselect(1,data.answer3) %>>1:全然ダメ（もしくはやってない）</option>
+            <option value=2 <%= optionselect(2,data.answer3) %>>2:いまいち</option>
+            <option value=3 <%= optionselect(3,data.answer3) %>>3:良くも悪くもない</option>
+            <option value=4 <%= optionselect(4,data.answer3) %>>4:良い</option>
+            <option value=4 <%= optionselect(4,data.answer3) %>>5:非常に良い</option>
         </select>
 
-        <p><input type="submit" value="回答!"></p>
+        <div><input type="submit" value="回答!"></div>
         
 
     </form>
