@@ -15,6 +15,9 @@ router.get('/', loginCheck, function(req, res) {
     res.render('index', { user: req.session.user});
 });
 
+router.post('/', loginCheck, function(req, res) {
+    res.render('index', { user: req.session.user});
+});
 
 module.exports = router;
 

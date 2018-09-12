@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>初期パスワード変更</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h2>初期パスワード変更</h2>
+    
+    <div>
+        初期パスワードの状態です。パスワードを変更してください！
+    </div>
+
+    <form action="/idchange" method="POST">
+        <div>
+            <input type="text" name="afterpassword" placeholder="新しいPassword" />
+        </div>
+        <div>
+            <input type="text" name="afterpassword2" placeholder="新しいPassword（確認）" />
+        </div>
+        <input type="submit"></button>
+    </form>
+</body>
+
+</html>

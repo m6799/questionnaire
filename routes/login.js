@@ -20,10 +20,17 @@ router.post('/', function(req, res) {
         if (err) {
             console.log(err);
         }
-        if (data === "") {
+        if (data.length==0) {
             res.render('login');
+            console.log("queryがなげられないよ。。/log。");
+        } else if (query.email == query.password){
+            console.log("emailとパスワードが一緒。初期パスワードだから、パスワード変更画面にいくよ。");
+            req.session.user = email;
+            res.redirect('/idchange');
         } else {
             console.log("userはあるってよ。/にリダイレクトするよ。");
+            console.log(data);
+            console.log(data.length);
             req.session.user = email;
             res.redirect('/');
         }

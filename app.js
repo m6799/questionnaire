@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 
 //ログインとログアウトを追加
 var loginRouter = require('./routes/login');
+var idchangeRouter = require('./routes/idchange');
 var addRouter = require('./routes/add');
 var logoutRouter = require('./routes/logout');
 var questRouter = require('./routes/quest');
@@ -57,7 +58,7 @@ app.use('/login', loginRouter);
 app.use('/add', addRouter);
 app.use('/logout', logoutRouter);
 app.use('/quest', questRouter);
-
+app.use('/idchange', idchangeRouter);
 
 
 // catch 404 and forward to error handler
