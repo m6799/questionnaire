@@ -21,7 +21,7 @@ exports.User = db.model('User', UserSchema);
 // Modelの定義  (回答スキーマ)
 var AnswerSchema = new mongoose.Schema({
     user:String,
-    
+
     shisakuanswer1_1:Number,
     shisakuanswer1_2:String,
     shisakuanswer2_1:Number,
@@ -77,10 +77,11 @@ var AnswerSchema = new mongoose.Schema({
     shisakuanswer27:String,
     teamanswer1_1:Number,
     teamanswer1_2:String,
-    
+
     visionanswer1_1:Number,
     visionanswer1_2:String,
-    
+    motivateanswer1_1:Number,
+    motivateanswer1_2:String,
     mvpanswer1_1:Number,
     mvpanswer1_2:String,
     

@@ -72,13 +72,12 @@ var extract = function (req) {
         shisakuanswer27:req.body.shisakuanswer27,
         teamanswer1_1:req.body.teamanswer1_1,
         teamanswer1_2:req.body.teamanswer1_2,
-
         visionanswer1_1:req.body.visionanswer1_1,
         visionanswer1_2:req.body.visionanswer1_2,
-
+        motivateanswer1_1:req.body.motivateanswer1_1,
+        motivateanswer1_2:req.body.motivateanswer1_2,
         mvpanswer1_1:req.body.mvpanswer1_1,
         mvpanswer1_2:req.body.mvpanswer1_2,
-
         etcanswer1:req.body.etcanswer1
     };
 };
