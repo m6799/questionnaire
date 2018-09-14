@@ -1,48 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
-    <meta charset="UTF-8">
-    <title>サイト</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>回答完了（企画開発チーム2018年上期アンケート）</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
 
 <body>
-    <h1>My Site</h1>
-    <p>W2018上期アンケート</p>
-    <%= user %> さんようこそ。
-        <p>
-            <a href="/logout">ログアウト</a>
-        </p>
-
-
-    <h2>アンケート回答完了！</h2>
-
-    <p>
-        <a href="/quest/input">アンケート回答修正</a>
-    </p>
-
-  
-
-    <p>Q1：一つ目の問い</p>
-    <p>
-        <%= questdata.answer1 %> 
-    </p>
-    <p>Q２：二つ目の問い</p>
-    <p>
-        <%= questdata.answer2 %> 
-    </p>
-    
-    <p>Q２：三つ目の問い</p>
-    <p>
-        <%= questdata.answer3 %> 
-    </p>
-    
-
-    <p>
+    <h1>企画開発チーム2018年上期アンケート</h1>
+    <div>
+        <%= user %> さんようこそ。
         <a href="/logout">ログアウト</a>
-    </p>
+    </div>
 
-        
+    <div class=large>
+        アンケート回答、ありがとうございました！
+    </div>
+    
+    <a href="/quest/input">アンケート回答修正したい場合はこちら</a>
+           
 </body>
 
 </html>

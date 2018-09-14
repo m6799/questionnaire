@@ -116,11 +116,25 @@ router.get('/input', loginCheck, function(req, res) {
 router.post('/complete', loginCheck, function(req, res) {
 
     var questanswer = extract(req);
+    
+    console.log("こっちが関数でとったやつ");
+    console.log(questanswer);
+    
+    //この辺まだつかってない。１行で書きたい。
+    var newAnswer = new Answer(req.body);
+    console.log("こっちが一行でかいたやつ");
+    console.log(newAnswer);
+
+    // delete newAnswer[_id];
+    // console.log("_idきえましたかね？？");
+    // console.log(newAnswer);
+
     var questdata = {
         user:req.session.user
     };
+
     Object.assign(questdata, questanswer);
-    
+    //Object.assign(questdata, newAnswer);
 
     //全て新規レコードで突っ込む
     // var newAnswer = new Answer(questdata);
@@ -132,6 +146,9 @@ router.post('/complete', loginCheck, function(req, res) {
             
     //     }
     // });
+
+
+    
 
 
     //回答がはじめてなら新規登録、既にあればアップデート

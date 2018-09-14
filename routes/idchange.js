@@ -23,7 +23,7 @@ router.get('/', loginCheck, function(req, res) {
 
 router.post('/', function(req, res) {
     console.log("idchange画面でＰＯＳＴされたよ");
-    var email = req.session.user;
+    var email = req.session.email;
     var afterpassword = req.body.afterpassword;
     var afterpassword2 = req.body.afterpassword2;
 

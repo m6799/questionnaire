@@ -4,7 +4,9 @@ var model = require('../model.js');
 var User = model.User;
 
 router.post('/', function(req, res) {
+
     var newUser = new User(req.body);
+    console.log(newUser);
     newUser.save(function(err) {
         if (err) {
             console.log(err);

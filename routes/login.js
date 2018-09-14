@@ -25,13 +25,17 @@ router.post('/', function(req, res) {
             console.log("queryがなげられないよ。。/log。");
         } else if (query.email == query.password){
             console.log("emailとパスワードが一緒。初期パスワードだから、パスワード変更画面にいくよ。");
-            req.session.user = email;
+            //req.session.user = email;
+            req.session.user = data[0].username;
+            req.session.email = data[0].email;
             res.redirect('/idchange');
         } else {
             console.log("userはあるってよ。/にリダイレクトするよ。");
             console.log(data);
             console.log(data.length);
-            req.session.user = email;
+            //req.session.user = email;
+            req.session.user = data[0].username;
+            req.session.email = data[0].email;
             res.redirect('/');
         }
     });
