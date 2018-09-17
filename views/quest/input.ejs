@@ -3,77 +3,6 @@
 <html lang="ja">
 
 <%
-  if (typeof data === 'undefined') {
-    var data = {
-      answer1:'',
-      answer3:'',
-      shisakuanswer1_1:'',
-      shisakuanswer1_2:'',
-      shisakuanswer2_1:'',
-      shisakuanswer2_2:'',
-      shisakuanswer3_1:'',
-      shisakuanswer3_2:'',
-      shisakuanswer4_1:'',
-      shisakuanswer4_2:'',
-      shisakuanswer5_1:'',
-      shisakuanswer5_2:'',
-      shisakuanswer6_1:'',
-      shisakuanswer6_2:'',
-      shisakuanswer7_1:'',
-      shisakuanswer7_2:'',
-      shisakuanswer8_1:'',
-      shisakuanswer8_2:'',
-      shisakuanswer9_1:'',
-      shisakuanswer9_2:'',
-      shisakuanswer10_1:'',
-      shisakuanswer10_2:'',
-      shisakuanswer11_1:'',
-      shisakuanswer11_2:'',
-      shisakuanswer12_1:'',
-      shisakuanswer12_2:'',
-      shisakuanswer13_1:'',
-      shisakuanswer13_2:'',
-      shisakuanswer14_1:'',
-      shisakuanswer14_2:'',
-      shisakuanswer15_1:'',
-      shisakuanswer15_2:'',
-      shisakuanswer16_1:'',
-      shisakuanswer16_2:'',
-      shisakuanswer17_1:'',
-      shisakuanswer17_2:'',
-      shisakuanswer18_1:'',
-      shisakuanswer18_2:'',
-      shisakuanswer19_1:'',
-      shisakuanswer19_2:'',
-      shisakuanswer20_1:'',
-      shisakuanswer20_2:'',
-      shisakuanswer21_1:'',
-      shisakuanswer21_2:'',
-      shisakuanswer22_1:'',
-      shisakuanswer22_2:'',
-      shisakuanswer23_1:'',
-      shisakuanswer23_2:'',
-      shisakuanswer24_1:'',
-      shisakuanswer24_2:'',
-      shisakuanswer25_1:'',
-      shisakuanswer25_2:'',
-      shisakuanswer26_1:'',
-      shisakuanswer26_2:'',
-      shisakuanswer27:'',
-      teamanswer1_1:'',
-      teamanswer1_2:'',
-
-      visionanswer1_1:'',
-      visionanswer1_2:'',
-      motivateanswer1_1:'',
-      motivateanswer1_2:'',
-      mvpanswer1_1:'',
-      mvpanswer1_2:'',
-
-      etcanswer1:''
-      
-    };
-  }
 
   function rtntst(){
       var str = "selected";
@@ -546,7 +475,7 @@
         <div class="large">
             <h2>チームについて</h2>     
             <div class="middle">
-                Q1：XXX
+                Q1：（全体的に）前期と比べ、チームは良くなったと思いますか？
                 <div class ="small">
                     <select name="teamanswer1_1">
                         <option value=1 <%= optionselect(1,data.teamanswer1_1) %>>1:全然ダメ（もしくはやってない）</option>
@@ -560,6 +489,212 @@
                     <textarea name="teamanswer1_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer1_2 %></textarea>
                 </div>
             </div>
+
+            <div class="middle">
+                Q2：前期と比べ、チームの運営は良くなったと思いますか？
+                <div class ="small">
+                    <select name="teamanswer2_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer2_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer2_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer2_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer2_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer2_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer2_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer2_2 %></textarea>
+                </div>
+            </div>
+            
+            <div class="middle">
+                Q3：現状のチームの運営について、どう思いますか？
+                <div class ="small">
+                    <select name="teamanswer3_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer3_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer3_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer3_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer3_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer3_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer3_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer3_2 %></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q4：前期と比べ、チームの雰囲気（メンバー同士のコミュニケーションなど）は良くなったと思いますか？
+                <div class ="small">
+                    <select name="teamanswer4_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer4_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer4_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer4_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer4_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer4_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer4_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer4_2 %></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q5：現状のチームの雰囲気（メンバー同士のコミュニケーションなど）について、どう思いますか？
+                <div class ="small">
+                    <select name="teamanswer5_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer5_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer5_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer5_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer5_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer5_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer5_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer5_2 %></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q6：前期と比べ、風通し（リーダーや他のメンバーへの相談、会話のしやすさ）は良くなったと思いますか？
+                <div class ="small">
+                    <select name="teamanswer6_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer6_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer6_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer6_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer6_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer6_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer6_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer6_2 %></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q7：現状の風通し（リーダーや他のメンバーへの相談、会話のしやすさ）について、どう思いますか？
+                <div class ="small">
+                    <select name="teamanswer7_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer7_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer7_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer7_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer7_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer7_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer7_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer7_2 %></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q8：前期と比べ、情報連携は良くなったと思いますか？
+                <div class ="small">
+                    <select name="teamanswer8_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer8_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer8_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer8_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer8_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer8_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer8_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer8_2 %></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q9：現状の情報連携について、どう思いますか？
+                <div class ="small">
+                    <select name="teamanswer9_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer9_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer9_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer9_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer9_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer9_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer9_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer9_2 %></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q10：前期と比べ、働きやすさは良くなったと思いますか？
+                <div class ="small">
+                    <select name="teamanswer10_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer10_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer10_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer10_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer10_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer10_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer10_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer10_2 %></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q11：現状のチームの働きやすさについて、どう思いますか？
+                <div class ="small">
+                    <select name="teamanswer11_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer11_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer11_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer11_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer11_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer11_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer11_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer11_2 %></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q12：前期と比べ、忙しさは改善されたと思いますか？
+                <div class ="small">
+                    <select name="teamanswer12_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer12_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer12_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer12_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer12_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer12_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer12_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer12_2 %></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q13：現状のチームの忙しさについて、どう思いますか？
+                <div class ="small">
+                    <select name="teamanswer13_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer13_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer13_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer13_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer13_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer13_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer13_2" rows="8" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer13_2 %></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q14：チームについてコメントがあれば、お願いします！（もっとこうしたほうがいい、など）
+                <div class ="small">
+                    <textarea name="teamanswer14" rows="16" cols="150" placeholder="コメント、ご意見など""><%= data.teamanswer14 %></textarea>
+                </div>
+            </div>
+
+
+            
+
+
+
+
         </div>
 
 
