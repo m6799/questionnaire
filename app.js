@@ -42,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'secret',
   resave: false,
-  store: new MongoStore({ url: 'mongodb://localhost/sample-login' }),
+  store: new MongoStore({ url: 'mongodb://localhost/questdata' }),
   saveUninitialized: false,
   cookie:{
   httpOnly: true,

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var model = require('../model');
 var Answer = model.Answer;
-
+var User = model.User;
 
 var loginCheck = function(req, res, next) {
     if(req.session.user){
@@ -20,6 +20,19 @@ var loginCheck = function(req, res, next) {
 
 //GET  quest/input
 router.get('/input', loginCheck, function(req, res) {
+    var userpulldown;
+
+    User.find(null, 'username', function (err, docs) {
+        if (err) {
+            console.log(err);
+            res.render('./quest/input', { user: req.session.user});
+        } else{
+            userpulldown = docs;
+            console.log("usernameのプルダウンリクエスト");
+            console.log(userpulldown);
+        }
+    });
+
     var query = {
         user:req.session.user
     };
@@ -27,16 +40,16 @@ router.get('/input', loginCheck, function(req, res) {
     Answer.findOne(query, function(err, data) {
         if (err) {
             console.log(err);
-            res.render('./quest/input', { user: req.session.user,data});
+            res.render('./quest/input', { user: req.session.user});
         }
         if (data == null) {
             console.log("データとれなかったよ。。");
             data = new Answer();
-            res.render('./quest/input', { user: req.session.user,data});
+            res.render('./quest/input', { user: req.session.user,data,userpulldown});
         } else {
             console.log("データとれたよ。。");
             // console.log(data);
-            res.render('./quest/input', { user: req.session.user,data});
+            res.render('./quest/input', { user: req.session.user,data,userpulldown});
         }
 
     
@@ -73,11 +86,11 @@ router.post('/complete', loginCheck, function(req, res) {
 
       
 
-    var questdata = {
-        user:req.session.user
-    };
+    // var questquery = {
+    //     user:questanswer.user
+    // };
 
-    Object.assign(questdata, questanswer);
+    // Object.assign(questquery, questanswer);
     //Object.assign(questdata, newAnswer);
 
     //全て新規レコードで突っ込む
@@ -97,15 +110,16 @@ router.post('/complete', loginCheck, function(req, res) {
 
     //回答がはじめてなら新規登録、既にあればアップデート
     var query = {
-        user:req.session.user
+        user:questanswer.user,
+        quest:questanswer.quest
     }
-    Answer.findOneAndUpdate(query, questdata, {upsert:true}, function(err, doc){
+    Answer.findOneAndUpdate(query, questanswer, {upsert:true}, function(err, doc){
         if (err) return res.send(500, { error: err });
     });
 
 
 
-    res.render('./quest/complete', { user: req.session.user,questdata});
+    res.render('./quest/complete', { user: req.session.user,questanswer});
 });
 
 module.exports = router;
