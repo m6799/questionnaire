@@ -161,7 +161,8 @@ var AnswerSchema = new mongoose.Schema({
     etcanswer2:String,
     etcanswer3:String,
     etcanswer4:String,
-    etcanswer5:String
+    etcanswer5:String,
+    etcanswer6:String
     
 },{collection: 'answer'});
 
