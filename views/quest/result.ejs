@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<%
+
+  function rtntst(){
+      var str = "selected";
+      return str;
+  }
+
+
+  function optionselect(a,b){
+    var str = "";
+    if(a == b){
+        var str = "selected";
+    }
+    return str;
+}
+
+%>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>企画開発チーム2018年上期アンケート結果</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>企画開発チーム2018年上期アンケート結果</h1>
+    ここに結果をだしたいです。
+
+    <table>
+        <tr>
+            <th>題名１</th>
+            <th>題名２</th>
+            <th>題名３</th>
+        </tr>
+        
+    </table>
+    <!-- <form action="/quest/complete" method="POST">
+        <input type="hidden" name="user" value="<%= user %>">
+        <input type="hidden" name="quest" value="2018firsthalf">
+
+        <div class="large">
+            <h2>2018年上期施策(ID:1070869865)について</h2>     
+            <div class="middle">
+                Q1：企画開発スキルロードマップ
+                <div class ="small">
+                    <select name="shisakuanswer1_1">
+                        <option value=1 <%= optionselect(1,data.shisakuanswer1_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.shisakuanswer1_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.shisakuanswer1_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.shisakuanswer1_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.shisakuanswer1_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer1_2" rows="8" cols="150" placeholder="コメント、ご意見など"><%=data.shisakuanswer1_2%></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q2：スキル１ＵＰ
+                <div class ="small">
+                    <select name="shisakuanswer2_1">
+                        <option value=1 <%= optionselect(1,data.shisakuanswer2_1) %>>1:全然ダメ（もしくはやってない）</option>
+                        <option value=2 <%= optionselect(2,data.shisakuanswer2_1) %>>2:いまいち</option>
+                        <option value=3 <%= optionselect(3,data.shisakuanswer2_1) %>>3:良くも悪くもない</option>
+                        <option value=4 <%= optionselect(4,data.shisakuanswer2_1) %>>4:良い</option>
+                        <option value=5 <%= optionselect(5,data.shisakuanswer2_1) %>>5:非常に良い</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="shisakuanswer2_2" rows="8" cols="150" placeholder="コメント、ご意見など"><%= data.shisakuanswer2_2 %></textarea>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="large">
+            <h2>チームについて</h2>     
+            <div class="middle">
+                Q1：（全体的に）前期と比べ、チームは良くなったと思いますか？
+                <div class ="small">
+                    <select name="teamanswer1_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer1_1) %>>1:悪くなった</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer1_1) %>>2:ちょっと悪くなった</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer1_1) %>>3:変わっていない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer1_1) %>>4:ちょっと良くなった</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer1_1) %>>5:とても良くなった</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer1_2" rows="8" cols="150" placeholder="コメント、ご意見など"><%= data.teamanswer1_2 %></textarea>
+                </div>
+            </div>
+
+            <div class="middle">
+                Q2：前期と比べ、チームの運営は良くなったと思いますか？
+                <div class ="small">
+                    <select name="teamanswer2_1">
+                        <option value=1 <%= optionselect(1,data.teamanswer2_1) %>>1:悪くなった</option>
+                        <option value=2 <%= optionselect(2,data.teamanswer2_1) %>>2:ちょっと悪くなった</option>
+                        <option value=3 <%= optionselect(3,data.teamanswer2_1) %>>3:変わっていない</option>
+                        <option value=4 <%= optionselect(4,data.teamanswer2_1) %>>4:ちょっと良くなった</option>
+                        <option value=5 <%= optionselect(5,data.teamanswer2_1) %>>5:とても良くなった</option>
+                    </select>
+                </div>
+                <div class ="small">
+                    <textarea name="teamanswer2_2" rows="8" cols="150" placeholder="コメント、ご意見など"><%= data.teamanswer2_2 %></textarea>
+                </div>
+            </div>
+        </div> -->
+
+
+
+        
+</body>
+
+</html>
