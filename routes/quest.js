@@ -66,48 +66,8 @@ router.post('/complete', loginCheck, function(req, res) {
     //var questanswer = extract(req);
     var questanswer = req.body;
     
-    console.log("こっちが関数でとったやつ");
     console.log(questanswer);
     
-    // //この辺まだつかってない。１行で書きたい。
-    // var newAnswer = new Answer(req.body);
-    // console.log("こっちが一行でかいたやつ");
-    // console.log(newAnswer);
-
-    // delete newAnswer["_id"];
-    // delete newAnswer["shisakuanswer1_1"];
-    // console.log("_idきえましたかね？？");
-    // console.log(newAnswer);
-
-    // var bodysonomono = req.body;
-    // console.log("bodyそのもの");
-    // console.log(bodysonomono); 
-
-
-      
-
-    // var questquery = {
-    //     user:questanswer.user
-    // };
-
-    // Object.assign(questquery, questanswer);
-    //Object.assign(questdata, newAnswer);
-
-    //全て新規レコードで突っ込む
-    // var newAnswer = new Answer(questdata);
-    // newAnswer.save(function(err) {
-    //     if (err) {
-    //         console.log(err);
-    //         res.redirect('back');
-    //     } else {
-            
-    //     }
-    // });
-
-
-    
-
-
     //回答がはじめてなら新規登録、既にあればアップデート
     var query = {
         user:questanswer.user,
@@ -117,9 +77,66 @@ router.post('/complete', loginCheck, function(req, res) {
         if (err) return res.send(500, { error: err });
     });
 
-
-
     res.render('./quest/complete', { user: req.session.user,questanswer});
+});
+
+
+router.get('/result', function(req, res, next) {
+    var ans;
+
+    Answer.find({ quest:'2018firsthalf' },null, function (err, docs) {
+        if (err) {
+            console.log(err);
+        } else{
+            ans = docs;
+            console.log("とれたAnswer");
+            console.log(ans);
+            res.render('./quest/result',{ans});
+
+        }
+    });
+
+    // User.find(null,null, function (err, docs) {
+    //     if (err) {
+    //         console.log(err);
+    //     } else{
+    //         ans = docs;
+    //         console.log("とれたUser");
+    //         console.log(ans);
+    //         res.render('./quest/result',{ans});
+
+    //     }
+    // });
+
+
+    // console.log("これ出したい");
+    // //console.log(ans.shisakuanswer1_2);
+    // console.log(ans);
+
+    // data = new Answer();
+
+    // ans =[
+    //     {
+
+    //         test1:'test11',
+    //         test2:'test22'
+    //     },
+
+    //     {
+
+    //         test1:'test111',
+    //         test2:'test222'
+    //     }
+
+    // ] 
+
+    // console.log("demo");
+    // console.log(ans);
+
+
+    
+
+    
 });
 
 module.exports = router;

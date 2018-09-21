@@ -26,3 +26,33 @@ body {
   /* background: aqua; */
   margin: 4px 0;/*上下だけ*/
 }
+
+table{
+  border-collapse: collapse; /* 隣り合うセルの線を結合 */
+  border: 2px solid blue;    /* 外側は青色の実線2px */
+}
+    
+th{
+  border: 2px solid blue;    /* 外側は青色の実線2px */
+}
+
+
+td.tableq {
+  text-align:left;
+  border: 2px solid blue;    /* 外側は青色の実線2px */
+  padding:8px
+}
+
+
+td.tableavarage {
+  text-align:center;
+  border: 2px solid blue;    /* 外側は青色の実線2px */
+
+}
+
+td.tablecomment {
+  text-align:left;
+  border: 2px solid blue;    /* 外側は青色の実線2px */
+  padding:8px
+
+}
