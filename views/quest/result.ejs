@@ -13,7 +13,7 @@ function avarage(json,member){
         sum += item[member];
     })
 
-    return sum/ans.length;
+    return Math.round((sum/ans.length) * 100) / 100;
 }
 
 
@@ -1135,7 +1135,753 @@ function avarage(json,member){
 
         </table>
     </div>
-        
+
+    
+
+
+    <div class="large">
+        <h2>チームビジョン（ID:1067098112）達成度について</h2>
+        <table>
+            <col width = "300">
+            <col width = "120">
+            <col width = "1000">
+
+            <tr>
+                <th>質問</th>
+                <th>評価</th>
+                <th>コメント（評価__コメント内容）</th>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q1：先進性（IT 、制度、銀行業界）
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer1_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer1_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer1_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer1_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+
+            <tr>
+                <td class = "tableq">
+                    Q2：ユーザにとっての「２つの新しいこと」を実現
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer2_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer2_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer2_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer2_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q3：顧客の「攻め」と「守り」に参加
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer3_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer3_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer3_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer3_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q4：相手のシステム事情を知りつくしたRM
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer4_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer4_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer4_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer4_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q5：専門性（エンジニア力、企画力、マーケティング力）
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer5_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer5_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer5_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer5_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q6：チームとしての組織的戦略活動
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer6_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer6_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer6_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer6_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q7：継続的育成によって形成される専門集団
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer7_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer7_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer7_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer7_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q8：ASPサービス企画
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer8_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer8_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer8_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer8_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q9：ALL-NRIの組織力集結の起点へ
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer9_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer9_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer9_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer9_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q10：事務的案内作業はオーダーだけ
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer10_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer10_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer10_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer10_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>            
+            <tr>
+                <td class = "tableq">
+                    Q11：新規提案屋（0→１に特化 →開発で1→100）
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer11_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer11_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer11_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer11_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>            
+            <tr>
+                <td class = "tableq">
+                    Q12：日常的に種をまき、感度良く
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer12_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer12_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer12_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer12_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q13：チームを活かすための活動
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"visionanswer13_1")%></p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer13_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.visionanswer13_1%> ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.visionanswer13_1%> ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                        Q14：チームビジョンについてコメントがあれば、お願いします！（もっとこうしたほうがいい、など）
+                </td>
+                <td class = "tableavarage">
+                    <p>‐</p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.visionanswer14  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="large">
+        <h2>ご自身のモチベーションについて（ ToMo(Total Motivation)指数 ）</h2>
+        <table>
+            <col width = "300">
+            <col width = "120">
+            <col width = "1000">
+
+            <tr>
+                <th>質問</th>
+                <th><div>
+                        評価
+                    </div>
+                    <div>
+                        (ToMo指数)
+                    </div>
+                </th>
+                <th>コメント（評価(ToMo指数)__コメント内容）</th>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q1：今の仕事や業務を続けているのは、仕事や業務そのものが楽しいから
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"motivateanswer1_1")%></p> 
+                    <p>（ <%= Math.round((avarage(ans,"motivateanswer1_1")*(10)) * 100) / 100　%> ）</p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.motivateanswer1_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.motivateanswer1_1%> (<%=item.motivateanswer1_1*(10)%>) ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.motivateanswer1_1%> (<%=item.motivateanswer1_1*(10)%>) ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q2：今の仕事や業務を続けているのは、辞めたら、自分と自分のことを気にかけてくれる人を落胆させてしまうから
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"motivateanswer2_1")%></p> 
+                    <p>（ <%= Math.round((avarage(ans,"motivateanswer2_1")*(-1.66)) * 100) / 100%> ）</p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.motivateanswer2_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.motivateanswer2_1%>  (<%=Math.round((item.motivateanswer2_1*(-1.66)) * 100) / 100%>) ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.motivateanswer2_1%>  (<%=Math.round((item.motivateanswer2_1*(-1.66)) * 100) / 100%>) ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+
+            <tr>
+                <td class = "tableq">
+                    Q3：今の仕事や業務を続けているのは、この仕事や業務を失ったら現在の生活水準を維持できなくなるから
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"motivateanswer3_1")%></p> 
+                    <p>（ <%= Math.round((avarage(ans,"motivateanswer3_1")*(-5)) * 100) / 100%> ）</p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.motivateanswer3_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.motivateanswer3_1%>  (<%=item.motivateanswer3_1*(-5)%>) ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.motivateanswer3_1%>  (<%=item.motivateanswer3_1*(-5)%>) ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+
+            <tr>
+                <td class = "tableq">
+                    Q4：今の仕事や業務を続けているのは、その仕事や業務に重要な目的があると思うから
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"motivateanswer4_1")%></p> 
+                    <p>（ <%= Math.round((avarage(ans,"motivateanswer4_1")*(5)) * 100) / 100%> ）</p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.motivateanswer4_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.motivateanswer4_1%>  (<%=item.motivateanswer4_1*(5)%>) ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.motivateanswer4_1%>  (<%=item.motivateanswer4_1*(5)%>) ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q5：今の仕事や業務を続けている明確な理由はない
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"motivateanswer5_1")%></p> 
+                    <p>（ <%= Math.round((avarage(ans,"motivateanswer5_1")*(-10)) * 100) / 100%> ）</p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.motivateanswer5_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.motivateanswer5_1%>  (<%=item.motivateanswer5_1*(-10)%>) ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.motivateanswer5_1%>  (<%=item.motivateanswer5_1*(-10)%>) ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q6：今の仕事や業務を続けているのは、自分なりの目標を達成する上で、有益だから
+                </td>
+                <td class = "tableavarage">
+                    <p> <%= avarage(ans,"motivateanswer6_1")%></p> 
+                    <p>（ <%= Math.round((avarage(ans,"motivateanswer6_1")*(1.66)) * 100) / 100%> ）</p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.motivateanswer6_2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.motivateanswer6_1%>  (<%=Math.round((item.motivateanswer6_1*(1.66)) * 100) / 100%>) ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.motivateanswer6_1%>  (<%=Math.round((item.motivateanswer1_1*(1.66)) * 100) / 100%>) ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q7：モチベーションについてコメントがあれば、お願いします！（もっとこうしたほうがいい、など）
+                </td>
+                <td class = "tableavarage">
+                    <p> ToMo指数合計</p> 
+                    <p>（ <%= Math.round((avarage(ans,"motivateanswer1_1")*10 + avarage(ans,"motivateanswer2_1")*(-1.66) + avarage(ans,"motivateanswer3_1")*(-5) + avarage(ans,"motivateanswer4_1")*(5) + avarage(ans,"motivateanswer5_1")*(-10) + avarage(ans,"motivateanswer6_1")*(1.66)) * 100) / 100 %> ）</p> 
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.motivateanswer7  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%=item.motivateanswer6_1%> (<%=Math.round((item.motivateanswer1_1*(10) + item.motivateanswer2_1*(-1.66) + item.motivateanswer3_1*(-5) +item.motivateanswer4_1*(5) + item.motivateanswer5_1*(-10) + item.motivateanswer6_1*(1.66)) * 100) / 100%>)  ＿<%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                <%=item.motivateanswer6_1%> (<%=Math.round((item.motivateanswer1_1*(10) + item.motivateanswer2_1*(-1.66) + item.motivateanswer3_1*(-5) +item.motivateanswer4_1*(5) + item.motivateanswer5_1*(-10) + item.motivateanswer6_1*(1.66)) * 100) / 100%>) ＿ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="large">
+        <h2>2018年上期、企画開発のMVPだと思う人</h2>
+        <table>
+            <col width = "300">
+            <col width = "1120">
+
+            <tr>
+                <th>MVP</th>
+                <th>コメント</th>
+            </tr>
+            <% ans.forEach(function(item){ %>
+                <% if (item.mvpanswer1_1 != 0) { %>
+                    <tr>
+                        <td class = "tableq">
+                            <%= item.mvpanswer1_1 %>
+                            <% if (master == 1) { %>
+                                ( by <%= item.user%>) 
+                            <% } %>  
+                        </td>
+                        <td class = "tablecomment">
+                            <%= item.mvpanswer1_2 %>
+                        </td>
+                    </tr>
+                <% } %>
+                <% if (item.mvpanswer2_1 != 0) { %>
+                    <tr>
+                        <td class = "tableq">
+                            <%= item.mvpanswer2_1 %>
+                            <% if (master == 1) { %>
+                                ( by <%= item.user%>) 
+                            <% } %>  
+                        </td>
+                        <td class = "tablecomment">
+                            <%= item.mvpanswer2_2 %>
+                        </td>
+                    </tr>
+                <% } %>  
+                <% if (item.mvpanswer3_1 != 0) { %>
+                    <tr>
+                        <td class = "tableq">
+                            <%= item.mvpanswer3_1 %>
+                            <% if (master == 1) { %>
+                                ( by <%= item.user%>) 
+                            <% } %>  
+                        </td>
+                        <td class = "tablecomment">
+                            <%= item.mvpanswer3_2 %>
+                        </td>
+                    </tr>
+                <% } %>      
+            <% }) %>
+        </table>
+    </div>
+
+    <div class="large">
+        <h2>その他</h2>
+        <table>
+            <col width = "300">
+            <col width = "1120">
+
+            <tr>
+                <th>質問</th>
+                <th>コメント</th>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q1：次の期にもし座談会をやる場合、やってみたい座談会のお題をおしえてください。
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.etcanswer1  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q2：自身、もしくはチームメンバーのタスクの中で、その人しかできない（その人が明日異動になったら回らない）タスクがあれば教えてください。
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.etcanswer2  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q3：過去の経験で、ハードネゴシエーション（価格交渉、プレゼンス向上策、障害対応、新規案件獲得、などなど。。）の経験があれば教えてください。
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.etcanswer3  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q4：次の期に企画開発チーム内で、タスクフォースやサークル活動（arumonのような、業務時間後にコーディングをする会など）を行うとしたら、やってみたい活動を教えてください。
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.etcanswer4  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q5：竹内さん主催のアイディアソンのネタ（お題）があれば教えてください。
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.etcanswer5  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>
+            <tr>
+                <td class = "tableq">
+                    Q6：その他、何かコメントがあれば自由にお願いします！
+                </td>
+                <td class = "tablecomment">
+                    <% ans.forEach(function(item){ %>
+                        <% var output = item.etcanswer6  %>
+                        
+                        <% if (master == 1) { %>
+                            <p><%= item.user%> : 
+                        <% } %>         
+                        <% if (output != "") { %>
+                            <%= output%></p> 
+                        <% } else{ %>
+                            <% if (master == 1) { %>
+                                ノーコメント</p>
+                            <% } %>         
+                        <% } %>
+                    <% }) %>
+                </td>
+            </tr>            
+        </table>
+    </div>
+
 </body>
 
 </html>
